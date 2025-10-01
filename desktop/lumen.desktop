@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Lumen
+Comment=Monitor brightness manager
+Exec=lumen-launcher
+Icon=lumen
+Terminal=false
+Type=Application
+Categories=Utility;Settings;
+StartupNotify=true

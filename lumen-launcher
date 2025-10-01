@@ -1,0 +1,3 @@
+#!/bin/bash
+# launcher for Lumen
+python3 -m lumen.main
