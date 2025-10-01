@@ -15,7 +15,8 @@ from translations import TEXT
 
 # Ścieżka dla katalogu ustawień
 # Path for the settings directory
-SETTINGS_FOLDER = os.path.expanduser("~/.config/lumen")
+SETTINGS_FOLDER = os.environ.get("XDG_CONFIG_HOME", os.path.expanduser("~/.config"))
+SETTINGS_FOLDER = os.path.join(SETTINGS_FOLDER, "lumen")
 
 # Ścieżka dla pliku ustawień
 # Path for the settings file
@@ -148,6 +149,7 @@ class LumenWindow(QMainWindow):
                 
                 w["alias_edit"].setPlaceholderText(TEXT[self.current_lang]['enter_custom_name'])
                 alias_value = s.get("alias", "")
+                
                 w["alias_edit"].setText(alias_value)
                 w["slider_software"].setValue(s.get("software_brightness", mon.software_brightness))
                 w["slider_hardware"].setValue(s.get("hardware_brightness", mon.hardware_brightness))
