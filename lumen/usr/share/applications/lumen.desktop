@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Lumen
+Comment=Monitor brightness adjustment
+Exec=/usr/bin/lumen
+Icon=/usr/share/icons/hicolor/64x64/apps/lumen.png
+Terminal=false
+Type=Application
+Categories=Utility;
+StartupNotify=true
+

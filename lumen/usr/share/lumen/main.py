@@ -14,7 +14,7 @@ if monitors:
     window.show()
     sys.exit(app.exec())
 else:
-    print("Brak monitorów do wyświetlenia lub nieobsługiwany backend")
+    print("No monitors to display or other error")
 
 
 

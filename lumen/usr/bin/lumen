@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# -*- coding: utf-8 -*-
+
+APP_DIR="/usr/share/lumen"
+MAIN_FILE="$APP_DIR/main.py"
+VENV_DIR="$APP_DIR/venv"
+
+if [ ! -f "$MAIN_FILE" ]; then
+    echo "[ERROR] Lumen main.py not found in $APP_DIR"
+    exit 1
+fi
+
+# Sprawdzenie wirtualnego środowiska
+if [ ! -d "$VENV_DIR" ]; then
+    echo "[ERROR] Virtual environment not found. Please reinstall Lumen."
+    exit 1
+fi
+
+PYTHON="$VENV_DIR/bin/python"
+
+# GUI with terminal if --terminal
+if [[ " $@ " =~ " --terminal " ]]; then
+    exec x-terminal-emulator -e "$PYTHON" "$MAIN_FILE"
+else
+    exec "$PYTHON" "$MAIN_FILE"
+fi
+

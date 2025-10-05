@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Lumen
 Comment=Monitor brightness manager
-Exec=lumen-launcher
+Exec=lumen
 Icon=lumen
 Terminal=false
 Type=Application
