@@ -10,7 +10,7 @@ if [ ! -f "$MAIN_FILE" ]; then
     exit 1
 fi
 
-# Sprawdzenie wirtualnego środowiska
+# Check venv
 if [ ! -d "$VENV_DIR" ]; then
     echo "[ERROR] Virtual environment not found. Please reinstall Lumen."
     exit 1
