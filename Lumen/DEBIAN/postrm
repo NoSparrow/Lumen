@@ -2,31 +2,32 @@
 set -e
 # -*- coding: utf-8 -*-
 
-# Path definitions
+# Define application paths
 APP_DIR="/usr/share/lumen"
 VENV_DIR="$APP_DIR/venv"
 
 echo "Running post-removal tasks for Lumen..."
 
-# --- [1] Delete configuration for all users in /home ---
+# --- 1. Remove user configurations from /home ---
 for userdir in /home/*; do
-    CONFIG_DIR="$userdir/.config/lumen"
-    if [ -d "$CONFIG_DIR" ]; then
-        echo "Removing user configuration directory: $CONFIG_DIR"
-        rm -rf "$CONFIG_DIR"
-    fi
+    CONFIG_DIR="$userdir/.config/lumen"
+    if [ -d "$CONFIG_DIR" ]; then
+        echo "Removing user configuration directory: $CONFIG_DIR"
+        # Delete the directory recursively and forcefully
+        rm -rf "$CONFIG_DIR"
+    fi
 done
 
-# --- [2] Delete the virtual environment (venv) ---
+# --- 2. Remove the virtual environment (venv) ---
 if [ -d "$VENV_DIR" ]; then
-    echo "Removing virtual environment: $VENV_DIR"
-    rm -rf "$VENV_DIR"
+    echo "Removing virtual environment: $VENV_DIR"
+    rm -rf "$VENV_DIR"
 fi
 
-# --- [3] Delete app catalog ---
+# --- 3. Remove the main application directory ---
 if [ -d "$APP_DIR" ]; then
-    echo "Removing main application directory: $APP_DIR"
-    rm -rf "$APP_DIR"
+    echo "Removing main application directory: $APP_DIR"
+    rm -rf "$APP_DIR"
 fi
 
 echo "Post-removal tasks completed."

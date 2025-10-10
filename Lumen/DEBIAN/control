@@ -3,6 +3,7 @@ Version: 1.0.0
 Section: utils
 Priority: optional
 Architecture: all
+Installed-Size: 643072
 Maintainer: Marcin Wróblewski <1trcb9qqc@mozmail.com>
 Depends: python3, ddcutil, x11-xserver-utils, python3-pip, python3-venv, libxcb-xinerama0, libxcb-cursor0, libx11-xcb1, libxrender1, libxi6, libxrandr2, libxfixes3, libxkbcommon-x11-0
 Description: Lumen – Monitor brightness adjustment application
